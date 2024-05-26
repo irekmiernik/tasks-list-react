@@ -1,3 +1,4 @@
+import '../section.css';
 
 export default function Form() {
     return (
