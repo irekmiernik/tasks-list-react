@@ -1,6 +1,6 @@
 import Form from './Form';
 import TwoButtons from './TwoButtons';
-import List from './List';
+import NewTask from './NewTask';
 
 export default function App() {
   return (
@@ -21,7 +21,7 @@ export default function App() {
           <TwoButtons />
         </div>
 
-        <List />
+        <NewTask />
       </section>
 
     </>
