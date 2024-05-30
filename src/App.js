@@ -1,6 +1,12 @@
 import Form from './Form';
 import TwoButtons from './TwoButtons';
-import NewTask from './NewTask';
+import TasksList from './TasksList';
+
+const tasksTable = [
+  { id: 1, content: "Pierwsze zadanie", done: false },
+  { id: 2, content: "Drugie zadanie", done: false },
+];
+const hideDoneTasks = false;
 
 export default function App() {
   return (
@@ -20,10 +26,10 @@ export default function App() {
           <h2 className="sectionFlex__itemContent h2">Lista zadań</h2>
           <TwoButtons />
         </div>
+        <TasksList />
 
-        <NewTask />
       </section>
 
     </>
   );
-}
+};

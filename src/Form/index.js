@@ -1,10 +1,11 @@
 import '../section.css';
 
-export default function Form() {
-    return (
-        <form className="sectionFlex">
-            <input className="sectionFlex__itemContent" placeholder="Co jest do zrobienia?" autoFocus />
-            <button className="sectionFlex__itemButton">Dodaj zadanie</button>
-        </form>
-    );
-}
+const Form = () =>
+(
+    <form className="sectionFlex">
+        <input className="sectionFlex__itemContent" placeholder="Co jest do zrobienia?" autoFocus />
+        <button className="sectionFlex__itemButton">Dodaj zadanie</button>
+    </form>
+);
+
+export default Form;
