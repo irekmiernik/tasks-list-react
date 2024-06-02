@@ -3,11 +3,12 @@ import TwoButtons from './TwoButtons';
 import TasksList from './TasksList';
 
 const tasksTable = [
-  { id: 1, content: "Pierwsze zadanie", done: false, },
-  { id: 2, content: "Drugie zadanie", done: false, },
+  { id: 1, content: "Pierwsze zadanie", done: true, },
+  { id: 2, content: "Drugie zadanie", done: true, },
+  { id: 3, content: "Ostatnie zadanie", done: true, },
 ];
 
-/* const hideDoneTasks = false; */
+const hideDoneTasks = false;
 
 export default function App() {
   return (
@@ -26,7 +27,7 @@ export default function App() {
 
         <div className="sectionFlex sectionFlex--header">
           <h2 className="sectionFlex__itemContent h2">Lista zadań</h2>
-          <TwoButtons />
+          <TwoButtons tasksTable={tasksTable} hideDoneTasks={hideDoneTasks} />
         </div>
         <TasksList tasksTable={tasksTable} />
       </section>
