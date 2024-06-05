@@ -1,6 +1,6 @@
 import '../section.css';
 
-export default function TwoButtons(props) {
+export default function HideAndAllDoneTasksButtons(props) {
 
     if (props.tasksTable.length > 0) {
 

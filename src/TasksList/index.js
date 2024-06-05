@@ -1,19 +1,15 @@
+import HideAndAllDoneTasksButtons from '../HideAndAllDoneTasksButtons';
+import Tasks from '../Tasks';
 import '../section.css';
 
 export default function TasksList(props) {
     return (
-        <ul className="sectionTasksList">
-            {props.tasksTable.map(task => (
-                <li key={task.id} className="sectionFlex sectionFlex--tasksList">
-                    <button className="sectionFlex__itemButton sectionFlex__itemButton--done">
-                        {task.done ? "✔" : ""}
-                    </button>
-                    <span className={task.done ? "sectionFlex__itemContent itemContentDone" : "sectionFlex__itemContent"} >
-                        {task.content}
-                    </span>
-                    <button className="sectionFlex__itemButton sectionFlex__itemButton--delete">🗑</button>
-                </li>
-            ))}
-        </ul>
+        <section className="section">
+            <div className="sectionFlex sectionFlex--header">
+                <h2 className="sectionFlex__itemContent h2">Lista zadań</h2>
+                <HideAndAllDoneTasksButtons tasksTable={props.tasksTable} hideDoneTasks={props.hideDoneTasks} />
+            </div>
+            <Tasks tasksTable={props.tasksTable} hideDoneTasks={props.hideDoneTasks} />
+        </section>
     );
 };
