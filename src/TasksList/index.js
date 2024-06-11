@@ -1,4 +1,7 @@
-import HideAndAllDoneTasksButtons from '../HideAndAllDoneTasksButtons';
+import ToggleHideTasks from '../ToggleHideTasks';
+import ToggleDoneTasks from '../ToggleDoneTasks';
+
+
 import Tasks from '../Tasks';
 import '../section.css';
 
@@ -7,7 +10,8 @@ export default function TasksList(props) {
         <section className="section">
             <div className="sectionFlex sectionFlex--header">
                 <h2 className="sectionFlex__itemContent h2">Lista zadań</h2>
-                <HideAndAllDoneTasksButtons tasksTable={props.tasksTable} hideDoneTasks={props.hideDoneTasks} />
+                <ToggleHideTasks tasksTable={props.tasksTable} hideDoneTasks={props.hideDoneTasks} />
+                <ToggleDoneTasks tasksTable={props.tasksTable} hideDoneTasks={props.hideDoneTasks} />
             </div>
             <Tasks tasksTable={props.tasksTable} hideDoneTasks={props.hideDoneTasks} />
         </section>

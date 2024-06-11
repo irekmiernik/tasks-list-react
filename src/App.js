@@ -2,8 +2,8 @@ import NewTask from './NewTask';
 import TasksList from './TasksList';
 
 const tasksTable = [
-  { id: 1, content: "Pierwsze zadanie", done: true, },
-  { id: 2, content: "Drugie zadanie", done: false, },
+  { id: 1, content: "Pierwsze zadanie", done: false, },
+  { id: 2, content: "Drugie zadanie", done: true, },
   { id: 3, content: "Ostatnie zadanie", done: true, },
 ];
 
