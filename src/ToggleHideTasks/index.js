@@ -1,13 +1,13 @@
 import '../section.css';
 
-export default function ToggleHideTasks(props) {
+export default function ToggleHideTasks({ tasksTable, hideDoneTasks, toggleHideDoneTasks }) {
 
-    if (props.tasksTable.length > 0) {
+    if (tasksTable.length > 0) {
 
         return (
             <>
-                <button className="sectionFlex__itemButton">
-                    {props.hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
+                <button className="sectionFlex__itemButton" onClick={toggleHideDoneTasks} >
+                    {hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
                 </button>
             </>
         )

@@ -1,10 +1,12 @@
 import '../section.css';
 
-export default function Tasks(props) {
+export default function Tasks({ tasksTable, hideDoneTasks }) {
     return (
         <ul className="sectionTasksList">
-            {props.tasksTable.map(task => (
-                <li key={task.id} className="sectionFlex sectionFlex--tasksList">
+            {tasksTable.map(task => (
+                <li key={task.id} className={hideDoneTasks && task.done
+                    ? "tasksListItemHidden" : "sectionFlex sectionFlex--tasksList"}
+                >
                     <button className="sectionFlex__itemButton sectionFlex__itemButton--done">
                         {task.done ? "✔" : ""}
                     </button>
