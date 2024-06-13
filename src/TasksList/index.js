@@ -4,7 +4,20 @@ import ToggleDoneTasks from '../ToggleDoneTasks';
 import Tasks from '../Tasks';
 import '../section.css';
 
-export default function TasksList({ tasksTable }) {
+export default function TasksList() {
+
+    const [tasksTable, setTasksTable] = useState([
+        { id: 1, content: "Pierwsze zadanie", done: true, },
+        { id: 2, content: "Drugie zadanie", done: true, },
+        { id: 3, content: "Ostatnie zadanie", done: false, },
+    ]);
+
+    const toggleAllDoneTasks = () => {
+        setTasksTable(tasksTable => tasksTable.map(task => ({
+            ...task,
+            done: true,
+        })));
+    };
 
     const [hideDoneTasks, setHideDoneTasks] = useState(false);
     const toggleHideDoneTasks = () => setHideDoneTasks(hideDoneTasks => !hideDoneTasks);
@@ -14,7 +27,7 @@ export default function TasksList({ tasksTable }) {
             <div className="sectionFlex sectionFlex--header">
                 <h2 className="sectionFlex__itemContent h2">Lista zadań</h2>
                 <ToggleHideTasks tasksTable={tasksTable} hideDoneTasks={hideDoneTasks} toggleHideDoneTasks={toggleHideDoneTasks} />
-                <ToggleDoneTasks tasksTable={tasksTable} hideDoneTasks={hideDoneTasks} />
+                <ToggleDoneTasks tasksTable={tasksTable} toggleAllDoneTasks={toggleAllDoneTasks} />
             </div>
             <Tasks tasksTable={tasksTable} hideDoneTasks={hideDoneTasks} />
         </section>
