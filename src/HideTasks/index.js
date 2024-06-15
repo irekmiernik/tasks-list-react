@@ -1,6 +1,6 @@
 import '../section.css';
 
-export default function ToggleHideTasks({ tasksTable, hideDoneTasks, toggleHideDoneTasks }) {
+export default function HideTasks({ tasksTable, hideDoneTasks, toggleHideDoneTasks }) {
 
     if (tasksTable.length > 0) {
 
