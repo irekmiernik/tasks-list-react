@@ -12,11 +12,10 @@ export default function TasksList() {
         { id: 3, content: "Ostatnie zadanie", done: false, },
     ]);
 
-    const toggleAllDoneTasks = () => {
-        setTasksTable(tasksTable => tasksTable.map(task => ({
-            ...task,
-            done: true,
-        })));
+    const setAllDoneTasks = () => {
+        setTasksTable(tasksTable => tasksTable.map((task) => (
+            { ...task, done: true, }
+        )));
     };
 
     const [hideDoneTasks, setHideDoneTasks] = useState(false);
@@ -27,7 +26,7 @@ export default function TasksList() {
             <div className="sectionFlex sectionFlex--header">
                 <h2 className="sectionFlex__itemContent h2">Lista zadań</h2>
                 <ToggleHideTasks tasksTable={tasksTable} hideDoneTasks={hideDoneTasks} toggleHideDoneTasks={toggleHideDoneTasks} />
-                <ToggleDoneTasks tasksTable={tasksTable} toggleAllDoneTasks={toggleAllDoneTasks} />
+                <ToggleDoneTasks tasksTable={tasksTable} setAllDoneTasks={setAllDoneTasks} />
             </div>
             <Tasks tasksTable={tasksTable} hideDoneTasks={hideDoneTasks} />
         </section>

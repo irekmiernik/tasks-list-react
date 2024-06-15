@@ -1,6 +1,6 @@
 import '../section.css';
 
-export default function ToggleDoneTasks({ tasksTable, toggleAllDoneTasks }) {
+export default function ToggleDoneTasks({ tasksTable, setAllDoneTasks }) {
 
     if (tasksTable.length > 0) {
 
@@ -11,7 +11,7 @@ export default function ToggleDoneTasks({ tasksTable, toggleAllDoneTasks }) {
                     disabled={tasksTable.filter((tableElement,) => {
                         if (!tableElement.done) { return tableElement } else { return null }
                     }).length === 0}
-                    onClick={toggleAllDoneTasks}
+                    onClick={setAllDoneTasks}
                 >
                     Ukończ wszystkie
                 </button>
