@@ -1,6 +1,6 @@
 import '../section.css';
 
-export default function ToggleDoneTasks({ tasksTable, setAllDoneTasks }) {
+export default function AllDoneTasks({ tasksTable, setAllDoneTasks }) {
 
     if (tasksTable.length > 0) {
 
