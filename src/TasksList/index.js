@@ -4,19 +4,7 @@ import AllDoneTasks from '../AllDoneTasks';
 import Tasks from '../Tasks';
 import '../section.css';
 
-export default function TasksList() {
-
-    const [tasksTable, setTasksTable] = useState([
-        { id: 1, content: "Pierwsze zadanie", done: true, },
-        { id: 2, content: "Drugie zadanie", done: true, },
-        { id: 3, content: "Ostatnie zadanie", done: false, },
-    ]);
-
-    const setAllDoneTasks = () => {
-        setTasksTable(tasksTable => tasksTable.map((task) => (
-            { ...task, done: true, }
-        )));
-    };
+export default function TasksList({ tasksTable, setAllDoneTasks }) {
 
     const [hideDoneTasks, setHideDoneTasks] = useState(false);
     const toggleHideDoneTasks = () => setHideDoneTasks(hideDoneTasks => !hideDoneTasks);
