@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-const Form = ({ addNewTask }) => {
+const Form = ({ addTask }) => {
 
     const onDodajZadanie = (event) => {
         event.preventDefault();
         if (taskName.trim() !== "") {
-            addNewTask(taskName.trim());
+            addTask(taskName.trim());
             setTaskName("");
         };
     };

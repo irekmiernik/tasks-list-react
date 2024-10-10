@@ -9,7 +9,7 @@ import TasksList from './TasksList';
 function App() {
   const [tasksTable, setTasksTable] = useState([]);
 
-  const addNewTask = (taskName) => {
+  const addTask = (taskName) => {
     setTasksTable(tasksTable => [...tasksTable, { id: tasksTable.length, content: taskName, done: false, }]);
   };
 
@@ -36,7 +36,7 @@ function App() {
   return (
     <Body>
       <Header title="Lista zadań" />
-      <Section title="Dodaj nowe zadanie" body={<Form addNewTask={addNewTask} />} />
+      <Section title="Dodaj nowe zadanie" body={<Form addTask={addTask} />} />
       <Section
         title="Lista zadań"
         twoButtons={<TwoButtons tasksTable={tasksTable} hideDoneTasks={hideDoneTasks}
