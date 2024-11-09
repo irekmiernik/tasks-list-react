@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Body from './Body';
-import Header from './Header';
-import Section from './Section';
-import Form from './Form';
-import TwoButtons from './TwoButtons';
-import TasksList from './TasksList';
+import Header from './Body/Header';
+import Section from './Body/Section';
+import Form from './Body/Section/Form';
+import TwoButtons from './Body/Section/TwoButtons';
+import TasksList from './Body/Section/TasksList';
 
 function App() {
   const [tasksTable, setTasksTable] = useState([]);
