@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Body from './Body';
 import Header from './Body/Header';
 import Section from './Body/Section';
@@ -7,7 +7,9 @@ import TwoButtons from './Body/Section/TwoButtons';
 import TasksList from './Body/Section/TasksList';
 
 function App() {
-  const [tasksTable, setTasksTable] = useState([]);
+  const [tasksTable, setTasksTable] = useState(JSON.parse(localStorage.getItem("tasksTable")));
+
+  useEffect(() => localStorage.setItem("tasksTable", JSON.stringify(tasksTable)));
 
   const addTask = (taskName) => {
     setTasksTable(tasksTable => [...tasksTable, { id: tasksTable.length, content: taskName, done: false, }]);
