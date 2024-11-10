@@ -7,7 +7,9 @@ import TwoButtons from './Body/Section/TwoButtons';
 import TasksList from './Body/Section/TasksList';
 
 function App() {
-  const [tasksTable, setTasksTable] = useState(JSON.parse(localStorage.getItem("tasksTable")));
+  const [tasksTable, setTasksTable] = useState(localStorage.getItem("tasksTable")
+    ? JSON.parse(localStorage.getItem("tasksTable"))
+    : []);
 
   useEffect(() => localStorage.setItem("tasksTable", JSON.stringify(tasksTable)));
 
