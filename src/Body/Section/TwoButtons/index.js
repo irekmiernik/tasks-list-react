@@ -1,19 +1,19 @@
-const TwoButtons = ({ tasksTable, hideDoneTasks, toggleHideDoneTasks, setAllTasksDone }) =>
+const TwoButtons = ({ taskSet, hideTasks, toggleHideTasks }) =>
 
-    (tasksTable.length > 0) &&
+    (taskSet.tasksTable.length > 0) &&
     (
         <>
             <button
                 className="sectionFlex__itemButton"
-                disabled={tasksTable.every(({ done }) => !done)}
-                onClick={toggleHideDoneTasks}
+                disabled={taskSet.tasksTable.every(({ done }) => !done)}
+                onClick={toggleHideTasks}
             >
-                {hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+                {hideTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
             <button
                 className="sectionFlex__itemButton"
-                disabled={tasksTable.every(({ done }) => done)}
-                onClick={setAllTasksDone}
+                disabled={taskSet.tasksTable.every(({ done }) => done)}
+                onClick={taskSet.setAllTasksDone}
             >
                 Ukończ wszystkie
             </button>

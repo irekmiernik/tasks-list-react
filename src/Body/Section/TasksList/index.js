@@ -1,13 +1,13 @@
-const TasksList = ({ tasksTable, hideDoneTasks, removeTask, setTaskDone }) =>
+const TasksList = ({ taskSet, hideTasks }) =>
 (
     <ul className="sectionTasksList">
-        {tasksTable.map(task => (
+        {taskSet.tasksTable.map(task => (
             <li key={task.id}
-                className={hideDoneTasks && task.done ? "tasksListItemHidden" : "sectionFlex sectionFlex--tasksList"}
+                className={hideTasks && task.done ? "tasksListItemHidden" : "sectionFlex sectionFlex--tasksList"}
             >
                 <button
                     className="sectionFlex__itemButton sectionFlex__itemButton--done"
-                    onClick={() => { setTaskDone(task.id) }}
+                    onClick={() => { taskSet.setTaskDone(task.id) }}
                 >
                     {task.done ? "✔" : ""}
                 </button>
@@ -16,7 +16,7 @@ const TasksList = ({ tasksTable, hideDoneTasks, removeTask, setTaskDone }) =>
                 </span>
                 <button
                     className="sectionFlex__itemButton sectionFlex__itemButton--delete"
-                    onClick={() => { removeTask(task.id) }}
+                    onClick={() => { taskSet.removeTask(task.id) }}
                 >
                     🗑
                 </button>
