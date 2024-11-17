@@ -15,7 +15,10 @@ function App() {
   return (
     <Body>
       <Header title="Lista zadań" />
-      <Section title="Dodaj nowe zadanie" body={<Form taskSet={taskSet} />} />
+      <Section
+        title="Dodaj nowe zadanie"
+        body={<Form taskSet={taskSet} />}
+      />
       <Section
         title="Lista zadań"
         twoButtons={<TwoButtons taskSet={taskSet} hide={hide} />}
