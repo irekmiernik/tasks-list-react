@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useTasks } from './useTasks';
+import { useHide } from './useHide';
 import Body from './Body';
 import Header from './Body/Header';
 import Section from './Body/Section';
@@ -10,9 +10,7 @@ import TasksList from './Body/Section/TasksList';
 function App() {
 
   const taskSet = useTasks();
-
-  const [hideTasks, setHideTasks] = useState(false);
-  const toggleHideTasks = () => setHideTasks(hideTasks => !hideTasks);
+  const hide = useHide();
 
   return (
     <Body>
@@ -20,8 +18,8 @@ function App() {
       <Section title="Dodaj nowe zadanie" body={<Form taskSet={taskSet} />} />
       <Section
         title="Lista zadań"
-        twoButtons={<TwoButtons taskSet={taskSet} hideTasks={hideTasks} toggleHideTasks={toggleHideTasks} />}
-        body={<TasksList taskSet={taskSet} hideTasks={hideTasks} />}
+        twoButtons={<TwoButtons taskSet={taskSet} hide={hide} />}
+        body={<TasksList taskSet={taskSet} hide={hide} />}
       />
     </Body>
   );

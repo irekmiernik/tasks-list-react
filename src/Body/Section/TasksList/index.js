@@ -1,9 +1,9 @@
-const TasksList = ({ taskSet, hideTasks }) =>
+const TasksList = ({ taskSet, hide }) =>
 (
     <ul className="sectionTasksList">
         {taskSet.tasksTable.map(task => (
             <li key={task.id}
-                className={hideTasks && task.done ? "tasksListItemHidden" : "sectionFlex sectionFlex--tasksList"}
+                className={hide.hideTasks && task.done ? "tasksListItemHidden" : "sectionFlex sectionFlex--tasksList"}
             >
                 <button
                     className="sectionFlex__itemButton sectionFlex__itemButton--done"
