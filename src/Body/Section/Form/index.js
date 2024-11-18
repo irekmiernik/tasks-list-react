@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const Form = ({ taskSet }) => {
 
@@ -8,9 +8,12 @@ const Form = ({ taskSet }) => {
             taskSet.addTask(taskName.trim());
             setTaskName("");
         };
+        inputRef.current.focus();
     };
 
     const [taskName, setTaskName] = useState("");
+
+    const inputRef = useRef(null);
 
     return (
         <form className="sectionFlex" onSubmit={onDodajZadanie}>
@@ -19,6 +22,8 @@ const Form = ({ taskSet }) => {
                 placeholder="Co jest do zrobienia?"
                 value={taskName}
                 onChange={({ target }) => setTaskName(target.value)}
+                autoFocus
+                ref={inputRef}
             />
             <button className="sectionFlex__itemButton">Dodaj zadanie</button>
         </form>
