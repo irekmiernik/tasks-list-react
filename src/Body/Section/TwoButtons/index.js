@@ -1,4 +1,4 @@
-const TwoButtons = ({ taskSet, hide }) =>
+const TwoButtons = ({ taskSet }) =>
 
     (taskSet.tasksTable.length > 0) &&
     (
@@ -6,9 +6,9 @@ const TwoButtons = ({ taskSet, hide }) =>
             <button
                 className="sectionFlex__itemButton"
                 disabled={taskSet.tasksTable.every(({ done }) => !done)}
-                onClick={hide.toggleHideTasks}
+                onClick={taskSet.toggleHideTasks}
             >
-                {hide.hideTasks ? "Pokaż" : "Ukryj"} ukończone
+                {taskSet.hideTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
             <button
                 className="sectionFlex__itemButton"

@@ -1,5 +1,4 @@
 import { useTasks } from './useTasks';
-import { useHide } from './useHide';
 import Body from './Body';
 import Header from './Body/Header';
 import Section from './Body/Section';
@@ -10,7 +9,6 @@ import TasksList from './Body/Section/TasksList';
 function App() {
 
   const taskSet = useTasks();
-  const hide = useHide();
 
   return (
     <Body>
@@ -21,8 +19,8 @@ function App() {
       />
       <Section
         title="Lista zadań"
-        twoButtons={<TwoButtons taskSet={taskSet} hide={hide} />}
-        body={<TasksList taskSet={taskSet} hide={hide} />}
+        twoButtons={<TwoButtons taskSet={taskSet} />}
+        body={<TasksList taskSet={taskSet} />}
       />
     </Body>
   );
